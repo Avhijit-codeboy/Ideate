@@ -1,0 +1,59 @@
+body{
+		background:url("/bg.png") no-repeat fixed center;
+		background-size:100% 100%;
+		}
+ 		#navBar{
+ 			position:relative;
+ 			width:100%;
+ 			height:20vh;
+ 			background:rgba(0,0,0,0.9);
+ 			top:-4vh;
+ 			left:0%;
+ 			box-shadow:1px 1px 2px #ffffff;
+ 		}
+ 		#navBar h1{
+ 			padding-top:10px;
+ 			color:#ffffff;
+ 			text-align:center;
+ 			text-shadow:1px 1px 2px;
+ 			font-family:algerian;
+ 		}
+ 		#navBar h3{
+ 			padding-top:10px;
+ 			text-align:center;
+ 			color:#ffffff;
+ 			text-shadow:1px 1px 2px;
+ 		}
+ 		.mycontainer {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 100px 50px;
+    text-align: center;
+    background:rgba(255,255,255,0.8);
+}
+.mycontainer h2{
+	text-shadow:1px 1px 2px black;
+	color:#4d4d4d;
+}
+
+.mywebapp {
+    margin: 50px auto;
+}
+
+#textbox {
+    margin: 30px 0;
+}
+.material-icons{
+font-size:30px;
+color:red;
+}
+@media (max-width: 768px) {
+  .mycontainer {
+    width: 85vw;
+    max-width: 85vw;
+  }
+
+    button {
+        margin-bottom: 10px;
+}
+}

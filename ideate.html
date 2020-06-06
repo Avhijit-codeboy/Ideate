@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Speech to text conversion using JavaScript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 		<link rel="stylesheet" type="text/css" href="/speechStyle.css">
+    </head>
+  <body>
+  	<div id="navBar">
+  		<h1>Ideate</h1>
+  		<h3>Let your ideas come live!</h3>
+  	</div>
+  	<div class="mycontainer">
+ 
+            <h2>Speak out your ideas by pressing the start button.<br>Then press the pdf button
+            to convert into pdf</h2>
+ 
+            <div class="mywebapp"> 
+                <div class="input">
+                    <textarea id="textbox" rows="10" cols="60"></textarea>
+                </div>         
+                <button id="start-btn" title="Start">Start</button>
+            </div>
+            <div id = "speechState"></div>
+            <button id = "pdf"><i class="material-icons">picture_as_pdf</i></button>
+        </div>
+<script type="text/javascript">
+	let doc = document.querySelector("#textbox");
+	let but = document.querySelector("#pdf");
+	let x = 10;
+	let y = 30;
+	click = () =>{
+		 let pdf = new jsPDF();
+		 let lines = pdf.splitTextToSize(doc.value,200);
+		 pdf.setFont("algerian");
+		 pdf.setFontType("bold");
+		 pdf.text(10,20,"Your Idea is as follows:-");
+		 pdf.setFont("aerial");
+		 pdf.setFontType("normal");
+		 for(let i = 0;i<lines.length;i++){
+		 	let val = lines[i];
+		 	//console.log(val);
+		 	pdf.text(x,y,val);
+		 	 y+=10;
+		 }
+		pdf.save('abc.pdf');
+	}
+	but.addEventListener("click",click);
+</script>
+<script src="/sketch.js"></script>
+  </body>
+  </html>
